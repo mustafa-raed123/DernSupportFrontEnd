@@ -1,0 +1,9 @@
+/* AppHeader.css */
+.ant-menu-item a {
+    color: #ffffff;
+    transition: color 0.3s ease;
+  }
+  
+  .ant-menu-item a:hover {
+    color: #FFD700;
+  }

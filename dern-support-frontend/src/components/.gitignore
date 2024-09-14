@@ -1,0 +1,28 @@
+# Ignore Visual Studio temporary files, build results, and
+# user-specific files
+
+## Build Folders ##
+bin/
+obj/
+
+## User-specific Files ##
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files
+*.log
+
+# ASP.NET Core environment settings
+appsettings*.json
+
+# VS Code files
+.vscode/
+
+# Ignore the publish output folder
+publish/
+
+# Dependency directories
+node_modules/

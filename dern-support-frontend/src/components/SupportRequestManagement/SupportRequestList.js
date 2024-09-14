@@ -15,7 +15,7 @@ const SupportRequestsPage = () => {
   useEffect(() => {
     const fetchSupportRequests = async () => {
       try {
-        const response = await axios.get('https://localhost:7121/api/Support/GetAllSupport'); // Update with your API endpoint
+        const response = await axios.get('https://localhost:7121/api/Support/GetAllSupport');
         setSupportRequests(response.data);
       } catch (err) {
         setError(err.response?.data?.message || 'Error fetching support requests.');
@@ -40,7 +40,7 @@ const SupportRequestsPage = () => {
   // Handle update request
   const handleUpdateClick = (request) => {
     setSelectedRequest(request);
-    setNewStatus(request.status || ''); // Set the current status as default
+    setNewStatus(request.status || '');
     setShowModal(true);
   };
 
@@ -88,6 +88,12 @@ const SupportRequestsPage = () => {
     }
   };
 
+  // Handle add feedback
+  const handleAddFeedbackClick = async (requestId) => {
+    // Logic to handle feedback submission
+    Swal.fire('Feedback', 'Add feedback functionality goes here.', 'info');
+  };
+
   return (
     <div className="container mt-5">
       <h1 className="mb-4">Support Requests</h1>
@@ -117,6 +123,11 @@ const SupportRequestsPage = () => {
                 <button className="btn btn-danger ml-2" onClick={() => handleDeleteClick(request.supportRequestId)}>
                   Delete
                 </button>
+                {request.status === 'Completed' && (
+                  <button className="btn btn-success ml-2" onClick={() => handleAddFeedbackClick(request.supportRequestId)}>
+                    Add Feedback
+                  </button>
+                )}
               </td>
             </tr>
           ))}

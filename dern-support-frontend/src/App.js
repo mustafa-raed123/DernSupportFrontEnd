@@ -13,6 +13,7 @@ import AppHeader from './components/Header/Header';
 import SupportRequestForm from './components/SupportRequestManagement/SupportRequestForm';
 import KnowledgeBaseArticle from './components/KnowledgeBase/KnowledgeBaseArticle';
 import CustomerList from './components/KnowledgeBase/KnowledgeBaseList';
+import CreateKnowledgeBaseArticle from './components/KnowledgeBase/KnowledgeBaseArticleForm';
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
             {role === "User" ? (
               <>
               <Route path="/" element={<Home />} />
+              <Route path="/CreateKnowledgeBaseArticle" element={<CreateKnowledgeBaseArticle />} />
               <Route path="/support-request-management" element = {<SupportRequestForm/>}/>
               <Route path="/knowledge-base" element={<KnowledgeBaseList />} />
               <Route path="/article/:id" element={<KnowledgeBaseArticle />} />
@@ -68,6 +70,11 @@ function App() {
             {role === "Technician"}
             <>
             <Route path="/JobDetails" element={<JobDetails />} />
+            <Route path="/support-request-management" element = {<SupportRequestForm/>}/>
+            <Route path="/knowledge-base" element={<KnowledgeBaseList />} />
+              <Route path="/article/:id" element={<KnowledgeBaseArticle />} />
+                        
+            <Route path="/CreateKnowledgeBaseArticle" element={<CreateKnowledgeBaseArticle />} />
 
             </>
           </>
